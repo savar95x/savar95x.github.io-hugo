@@ -1,0 +1,9 @@
+baseURL = 'https://savar.is-a.dev/'
+languageCode = 'en-us'
+title = 'savar'
+disableKinds = ["taxonomy", "sitemap", "404", "robotsTXT"]
+[markup.goldmark.renderer]
+  unsafe = true
+[minify]
+  disableXML = true
+  minifyOutput = true

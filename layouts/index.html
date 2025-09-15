@@ -1,0 +1,81 @@
+{{ partial "head.html" }}
+<body>
+	{{ partial "header.html" }}
+<main>
+<section id=container> 
+	<section>
+	<img class=round-image src=/imgs/me/garden.jpg aria-label="my picture" style="border: 4px solid var(--clr-bg-bright);" />
+	</section>
+	<h1>Hi! I'm <span class=highlight1>Savar</span>.</h1>
+	<p>A fourth year undergraduate student pursuing a Bachelor's in Technology in <span class="highlight2">Electrical Engineering</span>, with a minor in Computer Science at <span class="highlight3">IIT Madras</span>.<br>
+	This is my corner on the web, feel free to explore around!</p>
+	<section>
+	</section>
+	<section class=recents>
+	<h2 style="margin-bottom: -1rem;">Recent writings</h2>
+	<div id=cards>
+	{{ $allPosts := where .Site.RegularPages "Section" "blog" }}
+	{{ $mainDirPosts := where $allPosts "File.Dir" "eq" "blog/" }}
+	{{ $posts := $mainDirPosts | first 4 }}
+	{{ $posts = $posts | first 4 }}
+	{{ range $posts }}
+			<a class=card href="{{ if .Params.redirect }}{{ .Params.redirect }}{{ else }}{{ .RelPermalink }}{{ end }}">
+				<img src="{{ .Params.image }}" alt="{{ .Params.image }}">
+				<section class=title-date><span class="heading">{{ .Title }}: {{ .Description}} </span><span class="date">{{ .Date.Format "02 Jan 2006" }}</span></section>
+			</a>
+	{{ end }}
+	</div>
+	<a class="big-text" href="/blog">All posts <svg class="rarrow" width="20" height="20" viewBox="0 0 24 24" style="fill: var(--clr-fg);"><path d="M12 4l-1.41 1.41L16.17 11H4v2h12.17l-5.58 5.59L12 20l8-8z"/></svg> </a>
+	</section>
+	<section class=recents>
+	<div id=cards>
+	<h2>Recent projects</h2>
+	{{ $allPosts := where .Site.RegularPages "Section" "tools" }}
+	{{ $mainDirPosts := where $allPosts "File.Dir" "eq" "tools/" }}
+	{{ $posts := $mainDirPosts | first 3 }}
+	{{ $posts = $posts | first 3 }}
+	{{ range $posts }}
+			<a class=card href="{{ if .Params.redirect }}{{ .Params.redirect }}{{ else }}{{ .RelPermalink }}{{ end }}">
+				<img src="{{ .Params.image }}" alt="{{ .Params.image }}">
+				<section class=title-date><span class="heading">{{ .Title }}: {{ .Description}} </span><span class="date">{{ .Date.Format "02 Jan 2006" }}</span></section>
+			</a>
+	{{ end }}
+	</div>
+	<a class="big-text" href="/tools">All projects <svg class="rarrow" width="20" height="20" viewBox="0 0 24 24" style="fill: var(--clr-fg);"><path d="M12 4l-1.41 1.41L16.17 11H4v2h12.17l-5.58 5.59L12 20l8-8z"/></svg> </a>
+	</section>
+</section>
+</main>
+{{ partial "footer.html" }}
+<!--inspirations
+anders noren andersnoren.se
+milad alizadeh mil.ad
+colorscheme https://www.reddit.com/r/unixporn/comments/ual8w7/awesome_aesthetic_beautiful_pastel/#lightbox
+-->
+</body>
+</html>
+<style>
+.wide-image img, .wide-image {
+	height: clamp(300px, 40vw, 500px) !important;
+}
+.card {
+	display: flex;
+	margin-top: 2rem;
+}
+#cards img {
+	position: relative;
+	width: 80px; height: 80px; object-fit: cover;
+	border-radius: 50%;
+	margin-right: 2rem;
+	box-shadow: 0 2px 6px rgba(0, 0, 0, 0.15);
+}
+#cards {
+	padding: 1rem 0;
+}
+
+.title-date {
+	position: relative;
+	margin: auto 0;
+	display: flex; flex-direction: column;
+}
+.date { color: var(--clr-fg); }
+</style>

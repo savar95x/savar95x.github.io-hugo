@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang=en>
+	{{ partial "head" . }}
+<body>
+	{{ partial "header" . }}
+<main>
+<section id=container>
+<section id=wrapper>
+	<br>
+	<!--span id=larr>&uarr;</span> <a style="margin-left: 1.5rem;" class=invert-underline href="../">blog</a-->
+	<div style="display: flex; justify-content: space-between; align-items: center;">
+		<h1 style="margin: 0;">{{ .Title }}</h1>
+	</div>
+	<p style="color: var(--clr-fg-alt); margin: 0;">{{ .Description }}</p>
+	<br>
+	<br>
+	<img src="{{ .Params.image }}">
+	{{ .Content }}
+	<p style="padding-top: 1rem;"><strong><span style="margin-right: 0.1rem;" class="ph-bold ph-arrow-left"></span> <a class=invert-underline href=../../../workout-beginners>Back to main page</a></strong></p>
+	<i>This page was last edited on {{ .Lastmod.Format "02 Jan 2006 at 03:04 pm" }}</i>
+</section>
+</section>
+</main>
+	{{ partial "footer" . }}
+</body>
+</html>

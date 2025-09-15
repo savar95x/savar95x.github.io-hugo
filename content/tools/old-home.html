@@ -1,0 +1,49 @@
+---
+title: "home"
+description: A startpage that I made for personal use, to be used as a home page of a browser
+date: 2024-01-08T02:38:28+05:30
+image: "/imgs/old-home.webp"
+icons: ph-x
+---
+<!--section id=container-->
+<div id=cards>
+	<a class="ph-bold ph-magnifying-glass" aria-label="search over search engines like github and archwiki" href="/tools/search"></a>
+	<a class="ph-bold ph-horse" aria-label="coursera" href=https://chess.com></a>
+	<a class="ph-bold ph-phosphor-logo" aria-label="phosphor icons" href=https://phosphoricons.com></a>
+	<a class="ph-bold ph-note" aria-label="google keep notes" href=https://keep.google.com></a>
+	<a class="ph-bold ph-whatsapp-logo" aria-label="whatsapp web" href=https://web.whatsapp.com></a>
+	<a class="ph-bold ph-spotify-logo" aria-label="spotify web" href=https://open.spotify.com></a>
+
+</div>
+<!--/section-->
+<style>
+a {
+	text-decoration: none;
+}
+#cards {
+	display: grid;
+	gap: min(1.5rem,3vw);
+	grid-template-columns: repeat(3, 1fr);
+}
+
+#cards a {
+	background: var(--clr-bg-alt);
+	color: var(--clr-fg);
+	text-align: center;
+	padding: 3rem;
+	font-size: clamp(1.25rem, 5vw, 1.5rem) ;
+	box-shadow: 0px 2px 4px 0px  rgba(0,0,0,0.2);
+}
+
+#cards a:hover {
+	box-shadow: 0px 5px 4px 0px  rgba(0,0,0,0.2);
+	color: #222;
+	background-color: #6A7660;
+	/*background: color-mix(in srgb, black 20%, var(--clr-highlight2));
+	  */
+	transform: translate(0px,-3px);
+	filter: brightness(110%);
+}
+
+@media screen and (max-width: 5in) { #cards { grid-template-columns: repeat(2, 1fr); } }
+</style>
