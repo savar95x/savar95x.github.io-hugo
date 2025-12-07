@@ -1,81 +1,150 @@
 {{ partial "head.html" }}
 <body>
-	{{ partial "header.html" }}
-<main>
-<section id=container> 
-	<section>
-	<img class=round-image src=/imgs/me/garden.jpg aria-label="my picture" style="border: 4px solid var(--clr-bg-bright);" />
-	</section>
-	<h1>Hi! I'm <span class=highlight1>Savar</span>.</h1>
-	<p>A fourth year undergraduate student pursuing a Bachelor's in Technology in <span class="highlight2">Electrical Engineering</span>, with a minor in Computer Science at <span class="highlight3">IIT Madras</span>.<br>
-	This is my corner on the web, feel free to explore around!</p>
-	<section>
-	</section>
-	<section class=recents>
-	<h2 style="margin-bottom: -1rem;">Recent writings</h2>
-	<div id=cards>
-	{{ $allPosts := where .Site.RegularPages "Section" "blog" }}
-	{{ $mainDirPosts := where $allPosts "File.Dir" "eq" "blog/" }}
-	{{ $posts := $mainDirPosts | first 4 }}
-	{{ $posts = $posts | first 4 }}
-	{{ range $posts }}
-			<a class=card href="{{ if .Params.redirect }}{{ .Params.redirect }}{{ else }}{{ .RelPermalink }}{{ end }}">
-				<img src="{{ .Params.image }}" alt="{{ .Params.image }}">
-				<section class=title-date><span class="heading">{{ .Title }}: {{ .Description}} </span><span class="date">{{ .Date.Format "02 Jan 2006" }}</span></section>
+  {{ partial "header.html" }}
+  <main>
+    <section id=container> 
+      <section class=div>
+        <img class=round-image src=/imgs/me/main.jpg aria-label="my picture" />
+        <section>
+          <h1>Hello, I'm <span class=highlight1>Savar</span>.</h1>
+          <p class=bold>A fourth year undergraduate at <span class="highlight3">IIT Madras</span>, pursuing <span class="highlight2">Electrical Engineering</span>, with a minor in Computer Science.<br>This is my corner on the web, feel free to explore around!</p>
+          <section id=buttons>
+            <!--
+            <a class="ph ph-envelope" aria-label="mail me" href=mailto:skaar513@gmail.com></a>
+            <a class="ph ph-github-logo" aria-label="my github" href=https://github.com/savar95x></a>
+            <a class="ph ph-read-cv-logo" aria-label="mail me" href=#></a>
+            -->
+            <a class="button view-my-work" href=#projects>View My Work</a>
+        <a class="big-text button get-in-touch" href="/about#contact-me">Get In Touch <svg class="rarrow" width="20" height="20" viewBox="0 0 24 24" style="fill: var(--clr-fg3);"><path d="M12 4l-1.41 1.41L16.17 11H4v2h12.17l-5.58 5.59L12 20l8-8z"/></svg> </a>
+          </section>
+        </section>
+      </section>
+      <section id=writings class=recents>
+        <h2 class=line-heading>Recent Writings</h2>
+        <div id=cards-article>
+          {{ $allPosts := where .Site.RegularPages "Section" "blog" }}
+          {{ $mainDirPosts := where $allPosts "File.Dir" "eq" "blog/" }}
+          {{ $posts := $mainDirPosts | first 3 }}
+          {{ $posts = $posts | first 3 }}
+          {{ range $posts }}
+          <a class=card-article href="{{ if .Params.redirect }}{{ .Params.redirect }}{{ else }}{{ .RelPermalink }}{{ end }}">
+            <img src="{{ .Params.image }}" alt="{{ .Params.image }}">
+        <section class=title-date>
+          <span>
+            <span class="tag-article">{{ index .Params.tags 0 }}</span>
+            <span class="date">{{ .Date.Format "Jan 02, 2006" }}</span>
+          </span>
+          <span class="heading-article">{{ .Title }}</span>
+          <span class="description">{{ .Description}} </span>
+        </section>
 			</a>
-	{{ end }}
-	</div>
-	<a class="big-text" href="/blog">All posts <svg class="rarrow" width="20" height="20" viewBox="0 0 24 24" style="fill: var(--clr-fg);"><path d="M12 4l-1.41 1.41L16.17 11H4v2h12.17l-5.58 5.59L12 20l8-8z"/></svg> </a>
-	</section>
-	<section class=recents>
-	<div id=cards>
-	<h2>Recent projects</h2>
-	{{ $allPosts := where .Site.RegularPages "Section" "tools" }}
-	{{ $mainDirPosts := where $allPosts "File.Dir" "eq" "tools/" }}
-	{{ $posts := $mainDirPosts | first 3 }}
-	{{ $posts = $posts | first 3 }}
-	{{ range $posts }}
-			<a class=card href="{{ if .Params.redirect }}{{ .Params.redirect }}{{ else }}{{ .RelPermalink }}{{ end }}">
-				<img src="{{ .Params.image }}" alt="{{ .Params.image }}">
-				<section class=title-date><span class="heading">{{ .Title }}: {{ .Description}} </span><span class="date">{{ .Date.Format "02 Jan 2006" }}</span></section>
-			</a>
-	{{ end }}
-	</div>
-	<a class="big-text" href="/tools">All projects <svg class="rarrow" width="20" height="20" viewBox="0 0 24 24" style="fill: var(--clr-fg);"><path d="M12 4l-1.41 1.41L16.17 11H4v2h12.17l-5.58 5.59L12 20l8-8z"/></svg> </a>
-	</section>
-</section>
-</main>
-{{ partial "footer.html" }}
-<!--inspirations
-anders noren andersnoren.se
-milad alizadeh mil.ad
-colorscheme https://www.reddit.com/r/unixporn/comments/ual8w7/awesome_aesthetic_beautiful_pastel/#lightbox
--->
+          </a>
+          {{ end }}
+        </div>
+        <a class="big-text" href="/blog">All posts <svg class="rarrow" width="20" height="20" viewBox="0 0 24 24" style="fill: var(--clr-fg);"><path d="M12 4l-1.41 1.41L16.17 11H4v2h12.17l-5.58 5.59L12 20l8-8z"/></svg> </a>
+      </section>
+      <br>
+      <section id=projects class=recents>
+        <h2 class=line-heading>Recent Projects</h2>
+        <div id=cards>
+          {{ $allPosts := where .Site.RegularPages "Section" "tools" }}
+          {{ $mainDirPosts := where $allPosts "File.Dir" "eq" "tools/" }}
+          {{ $posts := $mainDirPosts | first 3 }}
+          {{ $posts = $posts | first 3 }}
+          {{ range $posts }}
+          <a class=card {{ if .Params.redirect }}href="{{ .Params.redirect }}" target=_blank {{ else }} href="{{ .RelPermalink }}"{{ end }}>
+            <img src="{{ .Params.image }}" alt="{{ .Params.image }}">
+
+            <section class=title-date>
+              <span class="heading">{{ .Title }}</span><span class="description">{{ .Description}}</span>
+                {{ with .Params.tags }}
+                <section class=tags>
+                  {{ range . }}
+                  <span class=tag>{{ . }}</span> 
+                  {{ end }}
+                </section>
+                {{ end }}
+            </section>
+
+            <div class="arrow-icon">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <line x1="7" y1="17" x2="17" y2="7"></line>
+                <polyline points="7 7 17 7 17 17"></polyline>
+              </svg>
+            </div>
+
+          </a>
+          {{ end }}
+        </div>
+        <a class="big-text" href="/tools">All projects <svg class="rarrow" width="20" height="20" viewBox="0 0 24 24" style="fill: var(--clr-fg);"><path d="M12 4l-1.41 1.41L16.17 11H4v2h12.17l-5.58 5.59L12 20l8-8z"/></svg> </a>
+      </section>
+    </section>
+  </main>
+  {{ partial "footer.html" }}
+  <!--inspirations
+    anders noren andersnoren.se
+    milad alizadeh mil.ad
+    colorscheme https://www.reddit.com/r/unixporn/comments/ual8w7/awesome_aesthetic_beautiful_pastel/#lightbox
+  -->
 </body>
-</html>
 <style>
-.wide-image img, .wide-image {
-	height: clamp(300px, 40vw, 500px) !important;
+.div{
+  display: flex;
+  align-items: center; /* Vertically center content */
+  gap: 2rem;
+  padding: 4rem 0px;
 }
-.card {
-	display: flex;
-	margin-top: 2rem;
+.div section:last-child {
+  flex: 1; /* Takes remaining space */
 }
-#cards img {
-	position: relative;
-	width: 80px; height: 80px; object-fit: cover;
-	border-radius: 50%;
-	margin-right: 2rem;
-	box-shadow: 0 2px 6px rgba(0, 0, 0, 0.15);
-}
-#cards {
-	padding: 1rem 0;
+.div>section {
 }
 
-.title-date {
-	position: relative;
-	margin: auto 0;
-	display: flex; flex-direction: column;
+#buttons {
+  margin: 2rem 0 2rem 0;
+  display: flex;
+  gap: 1rem;
 }
-.date { color: var(--clr-fg); }
+.button {
+  padding: 0.75rem 1rem;
+  border-radius: 5px;
+  color: var(--clr-fg);
+  text-decoration: none;
+  transition: all 0.2s ease;
+  font-size: 14px !important;
+}
+.big-text.get-in-touch {
+  margin: 0;
+}
+.get-in-touch {
+  color: var(--clr-fg3);
+}
+.get-in-touch:hover {
+  color: var(--clr-fg);
+}
+.view-my-work {
+  background: var(--clr-fg);
+  border-color: var(--clr-accent);
+  color: var(--clr-bg);
+}
+.view-my-work:hover {
+  filter: brightness(120%);
+}
+
+@media screen and (max-width: 725px) {
+  .div {
+    display: block;
+    padding: 0 0 1rem 0;
+  }
+  .div>section {
+    margin-top: 0;
+  }
+  .round-image {
+    width: 100%;
+    border-radius: 10px;
+    border: 1px solid var(--clr-bg4);
+  }
+}
+
 </style>
+</html>

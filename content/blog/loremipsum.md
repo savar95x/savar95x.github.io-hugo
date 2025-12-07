@@ -4,7 +4,8 @@ description: This is a test post
 date: 2000-01-21T17:26:28+05:30
 lastmod: 2025-01-21T17:21:28+05:30
 image: "/imgs/book.webp"
-icons: ph-x
+time: "1 min read"
+tags: [Filler]
 ---
 Lorem ipsum dolor sit amet, consectetur adipiscing elit.
 

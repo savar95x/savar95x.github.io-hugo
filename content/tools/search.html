@@ -1,59 +1,105 @@
 ---
 title: search
-description: a searchbar with some handy preset search engines
+description: Handy search engines shortcuts for power users
 date: 2025-01-09T02:38:28+05:30
-image: "/imgs/search.png"
-icons: true
+image: "/imgs/search.webp"
+tags: ["Javascript", "HTML/CSS"]
 ---
 <section id=wrapper>
-	<span id=logo class="ph-fill ph-youtube-logo"></span>
-	<section id=search-bar>
-		<span aria-label="search" onclick="search()" title="search" id=search-icon class="ph ph-magnifying-glass"></span>
-		<section class=input-cross>
-			<input id=searchInput placeholder="Search" />
-			<span aria-label="clear search input" onclick="clearInput()" title="Clear Input" id=clearButton class="ph ph-x"></span>
-		</section>
-	</section>
-	<!--button aria-label="send search query" onclick="search()" title="Search" class="ph-bold ph-magnifying-glass" id=searchButton></button-->
-	<section class=desc>
-	<p onclick="toggleEngine()">Search over <span id=name>youtube</span> <span class="right ph ph-arrow-right"></span></p>
-	<span aria-label="cycle through the search engine" onclick="toggleEngine()" title="Toggle Engine" id=toggleButton class="ph ph-dots-three"></span>
-	</section>
-	<span class=demo><!--strong><span id=date></span></strong><br--><span style="color: pink;"></span> And those who were seen dancing were thought to be insane by those who could not hear the music</span>
-</section>
-<style>
-.desc p {
-	font-size: 1.1rem !important;
-	cursor: default; /* Changes to a hand pointer (default for links) */
-	user-select: none; /* Standard syntax */
-	-webkit-user-select: none; /* Safari */
-	-moz-user-select: none; /* Firefox */
-	-ms-user-select: none; /* IE/Edge */
+  <section id=engines-search>
+    <section id=engines>
+      <span id="engine-0" onclick="toggleActiveColor(0)" class="engine active-engine">Google</span>
+      <span id="engine-1" onclick="toggleActiveColor(1)" class="engine">ArchWiki</span>
+      <span id="engine-2" onclick="toggleActiveColor(2)" class="engine">Youtube</span>
+      <span id="engine-3" onclick="toggleActiveColor(3)" class="engine">Github</span>
+    </section>
+  <section id=search-bar>
+    <span aria-label="search" onclick="search()" title="search" id=search-icon class="ph ph-magnifying-glass"></span>
+    <input id=searchInput placeholder="Search over youtube" />
+    <span aria-label="clear search input" onclick="clearInput()" title="Clear Input" id=tabButton class="tab"><span onclick="toggleEngine()">Tab</span></span>
+    <span aria-label="clear search input" onclick="clearInput()" title="Clear Input" id=clearButton class="ph ph-x-circle"></span>
+  </section>
+  </section>
+  <section id=cards>
+    <!--span class="ph ph-magnifying-glass" aria-label="search over search engines like github and archwiki" onclick="search()"></span-->
+    <a class="ph ph-github-logo" aria-label="google tasks" href=https://github.com></a>
+    <a class="ph ph-check-circle" aria-label="google tasks" href=https://tasks.google.com></a>
+    <a class="ph ph-lightbulb" aria-label="google keep notes" href=https://keep.google.com></a>
+    <a class="ph ph-phosphor-logo" aria-label="phosphor icons" href=https://phosphoricons.com></a>
+    <a class="ph ph-lightning" aria-label="spotify web" href=https://gemini.google.com></a>
+    <a class="ph ph-scribble-loop" aria-label="home" href=/></a>
+  </section>
+  <!--button aria-label="send search query" onclick="search()" title="Search" class="ph-bold ph-magnifying-glass" id=searchButton></button-->
+  <style>
+body {
+  background: #0A0A0A;
+}
+.engine {
+  color: var(--clr-gray);
+  font-weight: 500;
+  font-size: 0.85rem;
+  margin: auto;
+  padding: 0.5rem 0.75rem;
+  margin-right: 0.25rem;
+  cursor: pointer;
+  border-radius: 3px;
+}
+.engine:hover {
+  background: var(--clr-bg5);
+}
+.active-engine, .active-engine:hover {
+  background: var(--clr-accent);
+  color: var(--clr-bg);
+}
+#engines {
+  margin: 0 0 1.5rem 0;
+}
+#engines-search {
+  width: 100%;
+}
+* {
+  transition: all 0.5s cubic-bezier(0.16, 1, 0.3, 1);
 }
 #wrapper {
 	display: flex;
 	flex-direction: column;
-	align-items: center; /* This centers all direct children horizontally */
-	width: 100%;
-	padding: 4rem;
-	background: var(--clr-trans);
-	border: 1px solid var(--clr-bg-alt);
-	box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-	border-radius: 10px;
+	align-items: center;
+	padding: 3rem;
+	background: var(--clr-bg3);
+	border: 0px solid var(--clr-bg4);
+	box-shadow: 0 0 20px rgba(0, 0, 0, 1);
+  gap: 20px;
+  border-radius: 8px;
 }
 
-#logo {
-	font-size: 3rem; /* Adjust this value to make the icon larger */
-	margin-bottom: 1rem;
+.tab span {
+  font-size: 0.7rem;
+  text-transform: uppercase;
+  padding: 0.125rem 0.5rem;
+  margin: calc(-0.125rem - 1px) calc(-0.5rem - 1px);
+  border: 1px solid var(--clr-bg5);
+  border-radius: 5px;
+  cursor: pointer;
+  user-select: none;
 }
-.desc {
+#clearButton, .tab {
+  color: var(--clr-gray);
+}
+#clearButton, #search-icon {
+  cursor: pointer;
+}
+.tab span:hover, #clearButton:hover {
+  filter: brightness(120%);
+}
+
+#searchInput:focus:placeholder-shown + .tab {
 	display: flex;
-	align-items: center;  /* Vertically center items */
-	justify-content: space-between;  /* Push items to opposite sides */
-	width: 100%;  /* Take full width of parent */
 }
-#clearButton {
-	color: var(--clr-bg-bright);
+.tab {
+	padding: 1rem 1.5rem 1rem 1rem;
+	align-items: center;
+  display: none;
+  border-radius: 50px;
 }
 #toggleButton {
 	padding: 0.8rem;
@@ -61,23 +107,27 @@ icons: true
 #search-bar {
 	width: 100%;
 	display: flex;
+  border: 1px solid var(--clr-bg2);
+	background: var(--clr-bg2);
+  border-radius: 5px;
+  /*
+  border-radius: 50px;
+  */
 }
-.input-cross {
-	border: 1px solid var(--clr-bg-alt);
-	border-width: 1px 1px 1px 0;
-	border-radius: 0px 6px 6px 0px;
-	display: flex;
-	width: 100%;
+#search-bar:has(input:focus) {
+  #search-icon {
+    color: var(--clr-accent) !important;
+  }
+  border-color: var(--clr-accent);
 }
-#search-icon {
-	border: 1px solid var(--clr-bg-alt);
-	border-radius: 6px 0 0 6px;
-}
-.ph, .ph-fill {
+
+.ph, .ph-bold, .ph-fill {
 	display: flex;
 	position: relative;
-	padding: 1.2rem;
+	padding: 1.25rem;
+  font-size: 1.25rem !important;
 	top: 0px;
+  color: var(--clr-gray);
 	align-items: center;     /* vertical centering */
 }
 .right {
@@ -90,11 +140,14 @@ icons: true
 }
 input {
 	font-family: var(--font-family);
-	padding: 0.7rem;
+  margin: 1.25rem 0;
 	width: 100%;
-	background: var(--clr-trans);
-	color: var(--clr-fg);
+  background: inherit;
 	font-size: 1rem;
+	color: var(--clr-fg);
+}
+input::placeholder {
+	color: var(--clr-bg5);
 }
 #name {
 	font-weight: bold;
@@ -104,12 +157,56 @@ input {
 	padding: 1rem !important;
 	background: none;
 	border: none;
+	width: 100%;
 }
 input {
 	background: none;
 }
 #wrapper { box-shadow: none; }
 }
+
+#tool-container {
+	display: flex;
+	margin: auto;
+	width: 700px;
+	justify-content: center; /* horizontal centering */
+	align-items: center;     /* vertical centering */
+	height: 100vh;          /* full viewport height */
+}
+
+#cards {
+	display: grid;
+	gap: 10px;
+	grid-template-columns: repeat(6, 1fr);
+}
+
+#cards a, #cards span {
+	background: var(--clr-bg2);
+	color: var(--clr-gray);
+	text-align: center;
+	padding: 2rem;
+	font-size: clamp(1.25rem, 5vw, 1.5rem) ;
+  border-radius: 5px;
+}
+
+#cards a:hover, #cards span:hover {
+	background: var(--clr-accent-bg);
+  color: var(--clr-accent);
+  cursor: pointer;
+}
+
+#tool-container {
+	display: flex;
+	margin: auto;
+	width: 700px;
+	justify-content: center; /* horizontal centering */
+	align-items: center;     /* vertical centering */
+	height: 100vh;          /* full viewport height */
+}
+
+@media screen and (max-width: 650px) { #cards { grid-template-columns: repeat(3, 1fr); } }
+@media screen and (max-width: 1000px) { #tool-container { width: calc(100% - 6vw); } }
+
 </style>
 <script src="/js/search.js"></script>
 <!--script src=/js/date.js></scrip-->

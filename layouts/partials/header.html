@@ -1,15 +1,17 @@
+<canvas id="grid-canvas"></canvas>
 <section id=header-wrapper>
 <header> 
-	<section id=home>
+	<section class="home-link">
 		<!--img align=right src=https://github.com/savar95x.png aria-label="my picture" style="border-radius: 50%; max-width: 2rem; max-height: 2rem"  /-->
-		<a alt="website logo" aria-label="Go to homepage" style="color: var(--clr-fg);" href=/><b>savar</b></a>
+		<a alt="website logo" aria-label="Go to homepage" style="color: var(--clr-fg);" href=/>Savar</a>
 	</section>
-	<section class="stuff">
+	<section class="nav-links">
 		<!--a {{ if eq .RelPermalink "/blog/" }}class="fg-alt"{{ end }} href=/blog>blog</a-->
-		<a {{ if strings.Contains .RelPermalink "/blog/" }}style="color: var(--clr-fg-alt);"{{ end }} href=/blog>blog</a>
-		<a {{ if strings.Contains .RelPermalink "/about/" }}style="color: var(--clr-fg-alt);"{{ end }} href=/about>about</a>
-		<a {{ if strings.Contains .RelPermalink "/tools/" }}style="color: var(--clr-fg-alt);"{{ end }} href=/tools>work</a>
+		<a {{ if strings.Contains .RelPermalink "/blog/" }}class="nav-link-active"{{ end }} href=/blog>Blog</a>
+		<a {{ if strings.Contains .RelPermalink "/about/" }}class="nav-link-active"{{ end }} href=/about>About</a>
+		<a {{ if strings.Contains .RelPermalink "/tools/" }}class="nav-link-active"{{ end }} href=/tools>Work</a>
 	</section>
 </header>
 </section>
+<!--script src=/js/bg.js></script-->
 <!--hr-->

@@ -1,9 +1,10 @@
 ---
-title: "Workout"
-description: My Current Workout Split
+title: "My Current Workout Split"
+description: How I structure my week for optimal recovery and consistent gains
 date: 2025-01-18T16:35:28+05:30
 image: "/imgs/workout.webp"
-icons: ph-x
+tags: [Lifting, Personal]
+time: "1 min read"
 ---
 
 I follow a push, pull, leg inspired split.  

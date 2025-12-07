@@ -4,6 +4,9 @@ description: A startpage that I made for personal use, to be used as a home page
 date: 2024-01-08T02:38:28+05:30
 image: "/imgs/home.webp"
 icons: ph-x
+build:
+  list: never
+  render: always
 ---
 <!--section id=container-->
 <div id=cards>
@@ -39,9 +42,19 @@ a {
 }
 
 #cards a:hover {
-	color: #B4BB91;
+	color: var(--clr-accent);
 	text-decoration: underline;
 }
+
+#tool-container {
+	display: flex;
+	margin: auto;
+	width: 700px;
+	justify-content: center; /* horizontal centering */
+	align-items: center;     /* vertical centering */
+	height: 100vh;          /* full viewport height */
+}
+@media screen and (max-width: 1000px) { #tool-container { width: calc(100% - 6vw); } }
 
 @media screen and (max-width: 5in) { #cards { grid-template-columns: repeat(2, 1fr); } }
 </style>

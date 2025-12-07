@@ -9,33 +9,30 @@
 			{{ .Content }}
 		</section>
     <br>
-    <br>
-    <!--
-    Placeholder for Tags and searchbar
-    <br>
-    <br>
-    <hr>
-    <br>
-    <br>
-    -->
 		<!--span><span style="color: var(--clr-highlight2);" class="ph ph-calendar-blank"></span> <span class=desc><time datetime="{{ .Date.Format "2006-01-02" }}">{{ .Date.Format "Jan 02, 2006" }}</time><span> <a href="{{ .RelPermalink }}"><span class=desc>{{ .Title }}{{if isset .Params "description"}}: {{ .Description }} {{end}}</span></a></span><br-->
-		<div id=cards-article>
+		<div id=cards>
 			{{ range sort .RegularPages "Date" "desc" }}
-			<a class=card-article {{ if .Params.redirect }}href="{{ .Params.redirect }}" target=_blank {{ else }} href="{{ .RelPermalink }}"{{ end }}>
+			<a class=card {{ if .Params.redirect }}href="{{ .Params.redirect }}" target=_blank {{ else }} href="{{ .RelPermalink }}"{{ end }}>
 				<img src="{{ .Params.image }}" alt="{{ .Params.image }}">
-        <section class=title-date>
-          <span>
-            <span class="tag-article">{{ index .Params.tags 0 }}</span>
-            <span class="date">{{ .Date.Format "Jan 02, 2006" }}</span>
-          </span>
-          <span class="heading-article">{{ .Title }}</span>
-          <span class="description">{{ .Description}} </span>
-          <hr>
-          <span>
-            <span class="time">{{ .Params.time }}</span>
-            <span class="date read-article">Read Article &rarr;</span>
-          </span>
-        </section>
+
+            <section class=title-date>
+              <span class="heading">{{ .Title }}</span><span class="description">{{ .Description}}</span>
+                {{ with .Params.tags }}
+                <section class=tags>
+                  {{ range . }}
+                  <span class=tag>{{ . }}</span> 
+                  {{ end }}
+                </section>
+                {{ end }}
+            </section>
+
+            <div class="arrow-icon">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <line x1="7" y1="17" x2="17" y2="7"></line>
+                <polyline points="7 7 17 7 17 17"></polyline>
+              </svg>
+            </div>
+
 			</a>
 			{{end}}
 		</div>
@@ -43,8 +40,10 @@
 </section>
 </main>
 	{{ partial "footer" . }}
-</body>
 <style>
+.date {
+  margin: 0rem 0rem 0 auto;
+}
 .big-text:hover {
   transition: color 0.3s cubic-bezier(0.2, 1, 0.3, 1);
   color: var(--clr-accent) !important;
@@ -53,4 +52,5 @@
   margin: 2rem 0 1rem 0;
 }
 </style>
+</body>
 </html>
