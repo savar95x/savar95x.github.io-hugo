@@ -3,7 +3,7 @@ title: "Lifting for Beginners"
 description: "Breaking down the basics of hypertrophy"
 date: 2025-02-01T14:35:02+05:30
 image: "/imgs/deadlift.webp"
-time: "30 min read"
+time: "60 min read"
 tags: [Lifting, Guide]
 ---
 <!--Everything he did had a purpose-->
@@ -29,6 +29,7 @@ That said, it is still important to understand basic muscle science.
 <span style="color: var(--clr-fg-dark);" class="ph ph-file-text"></span> **2.1** [Basic Muscle Science](/blog/workout-sections/2/1/)  
 <span style="color: var(--clr-fg-dark);" class="ph ph-file-text"></span> **2.2** [How to Train different Musculatures](/blog/workout-sections/2/2/)  
 <span style="color: var(--clr-fg-dark);" class="ph ph-file-text"></span> **2.3** [What builds muscle?](/blog/workout-sections/2/3/)  
+<!--<span style="color: var(--clr-fg-dark);" class="ph ph-file-text"></span> **2.4** [Volume, Intensity, Frequency, and Progression](/blog/workout-sections/2/4/)  
 <!--<span style="color: var(--clr-fg-dark);" class="ph-bold ph-file-text"></span> **[2.4 Programming a workout plan](https://www.notion.so/2-4-Programming-a-workout-plan-fadfcd6295c64169bb7533baef36adfd?pvs=21)**  -->
 
 ## Nutrition
@@ -51,3 +52,5 @@ Sleep, flexing and stretching, meditation, stress management
 <span style="color: var(--clr-fg-dark);" class="ph ph-file-text"></span> **5.1** [Mindset](/blog/workout-sections/5/1/)  
 <span style="color: var(--clr-fg-dark);" class="ph ph-file-text"></span> **5.2** [Points to Ponder](/blog/workout-sections/5/2/)  
 <span style="color: var(--clr-fg-dark);" class="ph ph-file-text"></span> **5.3** [Resources](/blog/workout-sections/5/3/)  
+
+<span class=highlight>Workout with intention</span>, <span class=highlight>eat well</span>, <span class=highlight>sleep well</span>, and no one can stop you from achieving that dream physique of yours!

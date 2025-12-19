@@ -15,7 +15,7 @@
             <a class="ph ph-read-cv-logo" aria-label="mail me" href=#></a>
             -->
             <a class="button view-my-work" href=#projects>View My Work</a>
-        <a class="big-text button get-in-touch" href="/about#contact-me">Get In Touch <svg class="rarrow" width="20" height="20" viewBox="0 0 24 24" style="fill: var(--clr-fg3);"><path d="M12 4l-1.41 1.41L16.17 11H4v2h12.17l-5.58 5.59L12 20l8-8z"/></svg> </a>
+        <a class="big-text button get-in-touch" href="/about#contact-me">Get In Touch <svg class="rarrow" width="20" height="20" viewBox="0 0 24 24" style="fill: var(--clr-fg);"><path d="M12 4l-1.41 1.41L16.17 11H4v2h12.17l-5.58 5.59L12 20l8-8z"/></svg> </a>
           </section>
         </section>
       </section>
@@ -41,22 +41,22 @@
           </a>
           {{ end }}
         </div>
-        <a class="big-text" href="/blog">All posts <svg class="rarrow" width="20" height="20" viewBox="0 0 24 24" style="fill: var(--clr-fg);"><path d="M12 4l-1.41 1.41L16.17 11H4v2h12.17l-5.58 5.59L12 20l8-8z"/></svg> </a>
+        <a class="big-text" href="/blog">All posts <svg class="rarrow" width="20" height="20" viewBox="0 0 24 24" style="fill: var(--clr-gray);"><path d="M12 4l-1.41 1.41L16.17 11H4v2h12.17l-5.58 5.59L12 20l8-8z"/></svg> </a>
       </section>
       <br>
       <section id=projects class=recents>
         <h2 class=line-heading>Recent Projects</h2>
         <div id=cards>
-          {{ $allPosts := where .Site.RegularPages "Section" "tools" }}
-          {{ $mainDirPosts := where $allPosts "File.Dir" "eq" "tools/" }}
+          {{ $allPosts := where .Site.RegularPages "Section" "work" }}
+          {{ $mainDirPosts := where $allPosts "File.Dir" "eq" "work/" }}
           {{ $posts := $mainDirPosts | first 3 }}
           {{ $posts = $posts | first 3 }}
           {{ range $posts }}
           <a class=card {{ if .Params.redirect }}href="{{ .Params.redirect }}" target=_blank {{ else }} href="{{ .RelPermalink }}"{{ end }}>
-            <img src="{{ .Params.image }}" alt="{{ .Params.image }}">
-
             <section class=title-date>
-              <span class="heading">{{ .Title }}</span><span class="description">{{ .Description}}</span>
+              <span class="date">{{ .Date.Format "Jan 2006" }}</span>
+              <span class="heading">{{ .Title }}</span>
+              <span class="description">{{ .Description}}</span>
                 {{ with .Params.tags }}
                 <section class=tags>
                   {{ range . }}
@@ -67,16 +67,20 @@
             </section>
 
             <div class="arrow-icon">
-              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              {{ if .Params.github }}
+              <span class="ph ph-github-logo"></span>
+              {{ else }}
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
                 <line x1="7" y1="17" x2="17" y2="7"></line>
                 <polyline points="7 7 17 7 17 17"></polyline>
               </svg>
+              {{ end }}
             </div>
 
           </a>
           {{ end }}
         </div>
-        <a class="big-text" href="/tools">All projects <svg class="rarrow" width="20" height="20" viewBox="0 0 24 24" style="fill: var(--clr-fg);"><path d="M12 4l-1.41 1.41L16.17 11H4v2h12.17l-5.58 5.59L12 20l8-8z"/></svg> </a>
+        <a class="big-text" href="/work">All projects <svg class="rarrow" width="20" height="20" viewBox="0 0 24 24" style="fill: var(--clr-gray);"><path d="M12 4l-1.41 1.41L16.17 11H4v2h12.17l-5.58 5.59L12 20l8-8z"/></svg> </a>
       </section>
     </section>
   </main>
@@ -103,38 +107,66 @@
 #buttons {
   margin: 2rem 0 2rem 0;
   display: flex;
-  gap: 1rem;
+  gap: 2rem;
 }
 .button {
-  padding: 0.75rem 1rem;
-  border-radius: 5px;
   color: var(--clr-fg);
   text-decoration: none;
-  transition: all 0.2s ease;
   font-size: 14px !important;
 }
 .big-text.get-in-touch {
   margin: 0;
 }
-.get-in-touch {
-  color: var(--clr-fg3);
+.recents .big-text {
+  color: var(--clr-gray);
 }
-.get-in-touch:hover {
+.big-text:hover {
+  color: var(--clr-accent);
+}
+.get-in-touch {
   color: var(--clr-fg);
 }
+.get-in-touch:hover {
+  color: var(--clr-accent);
+}
 .view-my-work {
-  background: var(--clr-fg);
-  border-color: var(--clr-accent);
-  color: var(--clr-bg);
+  background: var(--clr-bg3);
+  border: 1px solid var(--clr-bg4);
+  color: var(--clr-fg);
+
+  position: relative;
+  letter-spacing: 1px;
+  padding: 15px 20px;
+  cursor: pointer;
+  overflow: hidden;
+  transition: all 0.3s cubic-bezier(0.25, 1, 0.5, 1);
+  z-index: 1;
+}
+.view-my-work::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 0%; /* Starts empty */
+  height: 100%;
+  background: var(--clr-accent-bg);
+  z-index: -1;
+  transition: all 0.3s cubic-bezier(0.25, 1, 0.5, 1);
 }
 .view-my-work:hover {
-  filter: brightness(120%);
+  border-color: var(--clr-accent-bg1);
+}
+.view-my-work:hover::before {
+  width: 100%; /* Fills from left to right */
 }
 
 @media screen and (max-width: 725px) {
+  .view-my-work {
+    padding: 12px 15px;
+  }
   .div {
     display: block;
-    padding: 0 0 1rem 0;
+    padding: 1.5em 0 0.5rem 0;
   }
   .div>section {
     margin-top: 0;

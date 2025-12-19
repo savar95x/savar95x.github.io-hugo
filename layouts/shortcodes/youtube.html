@@ -1,0 +1,37 @@
+{{- $id := .Get 0 -}}
+{{- $title := .Get 1 | default "Play YouTube Video" -}}
+
+<div class="youtube-lite" data-id="{{ $id }}">
+    <img src="https://i.ytimg.com/vi/{{ $id }}/hqdefault.jpg" alt="{{ $title }}" loading="lazy">
+    <button class="play-btn" aria-label="{{ $title }}">
+      <svg viewBox="0 0 24 24" width="64" height="64">
+        <circle cx="12" cy="12" r="10" class="bg"></circle>
+        <path d="M10 8l6 4-6 4V8z" class="icon"></path>
+      </svg>
+    </button>
+</div>
+
+{{- /* Load the script once per page, even if multiple videos exist. 
+   Check if we have already included the script to avoid duplication.
+*/ -}}
+{{- if not (.Page.Scratch.Get "youtubeLiteLoaded") -}}
+    {{- .Page.Scratch.Set "youtubeLiteLoaded" true -}}
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            const embeds = document.querySelectorAll('.youtube-lite');
+            embeds.forEach(embed => {
+                embed.addEventListener('click', function() {
+                    const videoId = this.getAttribute('data-id');
+                    const iframe = document.createElement('iframe');
+                    iframe.setAttribute('src', `https://www.youtube.com/embed/${videoId}?autoplay=1&rel=0`);
+                    iframe.setAttribute('frameborder', '0');
+                    iframe.setAttribute('allow', 'accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture');
+                    iframe.setAttribute('allowfullscreen', 'true');
+                    this.innerHTML = '';
+                    this.appendChild(iframe);
+                    this.classList.add('playing');
+                });
+            });
+        });
+    </script>
+{{- end -}}

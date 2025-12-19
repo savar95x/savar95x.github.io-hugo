@@ -1,4 +1,4 @@
-<canvas id="grid-canvas"></canvas>
+<!--canvas id="grid-canvas"></canvas-->
 <section id=header-wrapper>
 <header> 
 	<section class="home-link">
@@ -9,9 +9,10 @@
 		<!--a {{ if eq .RelPermalink "/blog/" }}class="fg-alt"{{ end }} href=/blog>blog</a-->
 		<a {{ if strings.Contains .RelPermalink "/blog/" }}class="nav-link-active"{{ end }} href=/blog>Blog</a>
 		<a {{ if strings.Contains .RelPermalink "/about/" }}class="nav-link-active"{{ end }} href=/about>About</a>
-		<a {{ if strings.Contains .RelPermalink "/tools/" }}class="nav-link-active"{{ end }} href=/tools>Work</a>
+		<a {{ if strings.Contains .RelPermalink "/work/" }}class="nav-link-active"{{ end }} href=/work>Work</a>
 	</section>
 </header>
 </section>
+<script src=/js/header.js></script>
 <!--script src=/js/bg.js></script-->
 <!--hr-->

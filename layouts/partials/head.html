@@ -4,6 +4,7 @@
 	<title>{{ if .Title }}{{ .Title }} | {{ .Site.Title }}{{ else }}savar's website{{ end }}</title>
 	<meta charset="utf-8" />
 	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="color-scheme" content="dark light">
 	
 	<!-- SEO Meta -->
 	<meta name="description" content="{{ if .Description }}{{ .Description }}{{else}}savar's personal website{{ end }}" />
@@ -17,6 +18,12 @@
 
 	<!-- Styles & Icons -->
 	<!--before-->
+  <link rel="stylesheet" href="/preload.css">
+  <script src="/js/preloader.js"></script>
+  <noscript>
+    <style>body { visibility: visible; opacity: 1; }</style>
+  </noscript>
+
 	<link rel="preconnect" href="https://fonts.googleapis.com">
 	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="anonymous">
 	<link href="https://fonts.googleapis.com/css2?family=Geist:wght@400..700&display=swap" rel="stylesheet">
