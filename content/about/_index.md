@@ -19,7 +19,7 @@ noun
 
 <img style="margin: 1rem;" class=round-image align=right src="/imgs/me/sit.jpg" />
 <p>
-My name is <span class=highlight2>Savar</span>. I am a fourth year undergraduate student pursuing Electrical Engineering, with a minor in Computer Science at IIT Madras. I have a deep passion for natural <a href="https://en.wikipedia.org/wiki/Muscle_hypertrophy">hypertrophy</a> training, am an avid <a href="https://www.gnu.org/philosophy/free-sw.en.html">free software</a> and linux enthusiast, and a cinema lover.  
+My name is <span class=highlight2>Savar</span>. I am a fourth year undergraduate student pursuing Electrical Engineering. I have a deep passion for natural <a href="https://en.wikipedia.org/wiki/Muscle_hypertrophy">hypertrophy</a> training, am an avid <a href="https://www.gnu.org/philosophy/free-sw.en.html">free software</a> and linux enthusiast, and a cinema lover.  
 
 During my leisure hours, I often find myself working on this website or on my <a href=https://github.com/savar95x/dotfiles>rice</a>. Apart from that, I spend time trying to understand various training methodologies and philosophies in natural bodybuilding.  
 
@@ -32,6 +32,10 @@ I started this blog as a platform to express my thoughts, articulate my ideas, a
 <span id=contact-me  class="small-caps-text">Contact Me</span>  
 <hr>
 <div class="tech-list">
+<a href="/savar_resume.pdf" target=_blank class="tech-link">
+<span class="tech-label">Resume</span>
+<span class="tech-value">savar_resume.pdf</span>
+</a>
 <a href="mailto:savar95x@gmail.com" class="tech-link">
 <span class="tech-label">Mail</span>
 <span class="tech-value">savar95x@gmail.com</span>
