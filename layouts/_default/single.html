@@ -14,9 +14,11 @@
                 </section>
                 {{ end }}
 		<h1 style="margin-bottom: 0.5rem;">{{ .Title }}</h1>
-      <span class="small-caps-text">{{ .Description }}</span>
+      {{ with .Description }}
+      <span class="small-caps-text">{{ . }}</span>
       <br>
       <br>
+      {{ end }}
       <br>
     <span class="article-meta small-text" style="display: flex; gap: 1.25rem; color: var(--clr-gray);">
       <span class=article-date><span style="margin-right: 0.25rem;" class="ph ph-calendar-blank"></span> {{ .Date.Format "Jan 02, 2006" }}</span>

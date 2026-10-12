@@ -1,5 +1,5 @@
 baseURL = 'https://savar.is-a.dev/'
-languageCode = 'en-us'
+locale = 'en-us'
 title = 'savar'
 disableKinds = ["taxonomy", "sitemap", "404", "robotsTXT"]
 [markup.goldmark.renderer]
@@ -7,3 +7,5 @@ disableKinds = ["taxonomy", "sitemap", "404", "robotsTXT"]
 [minify]
   disableXML = true
   minifyOutput = true
+[security]
+  allowContent = ['.*']
