@@ -21,8 +21,8 @@ As I rot in this AirBnb from the last two days, I realise how time flies when yo
 It's the same reason why I don't remember much from my holidays at home. And why time just vanishes over there.
 
 When you don't understand the urgency and the gravity of the fact that your time in this world is limited, it's really easy to waste away your prime years.
-To put to perspective, they say <span class="highlight">the percieved midpoint of one's life is at eighteen</span>, considering they live till eighty-one.
-That means you've basically lived half your life when you're eighteen. And you have even less time from eighteen to fourty, which is where the peak of your life lies.
+To put to perspective, they say <span class="highlight">the perceived midpoint of one's life is at eighteen</span>, considering they live till eighty-one.
+That means you've basically lived half your life when you're eighteen. And you have even less time from eighteen to forty, which is where the peak of your life lies.
 
 If we don't put our minds to something worthwhile, it's easy to lose track of time and wonder where'd all the time go.
 
