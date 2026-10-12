@@ -23,7 +23,7 @@ The story of the baseball legend Jackie Robinson's journey starting out in the M
 Fun fact - This is the movie that earned Chadwick Boseman his role as Black Panther, and rightfully so. May he rest in peace.  
 <section>
 
-[Watch 42](https://www.google.com/search?client=firefox-b-d&q=where+to+42+movie)
+[Watch 42](https://www.google.com/search?client=firefox-b-d&q=where+to+watch+42+movie)
 </section>
 
 <h2 style="margin: 2rem 0 0.25rem 0;">Arcane (2021)</h2>
@@ -41,7 +41,7 @@ The storytelling, character development, animation, dialogues, score - everythin
 I honestly feel grateful to witness it in my lifetime, and I am yet to encounter another series that moves me as much as Arcane does.  
 <section>
 
-[Watch Arcane](https://www.google.com/search?client=firefox-b-d&q=where+to+arcane)
+[Watch Arcane](https://www.google.com/search?client=firefox-b-d&q=where+to+watch+arcane)
 </section>
 
 <h2 style="margin: 2rem 0 0.25rem 0;">Shutter Island (2010)</h2>
@@ -57,7 +57,7 @@ I love how Scorsese directed this. Everything unfolds as it should, keeping the 
 
 If you wanna get your mind blown, this is the way.  
 
-[Watch Shutter Island](https://www.google.com/search?client=firefox-b-d&q=where+to+shutter+island)
+[Watch Shutter Island](https://www.google.com/search?client=firefox-b-d&q=where+to+watch+shutter+island)
 
 <h2 style="margin: 2rem 0 0.25rem 0;">Dead Poets Society (1989)</h2>
 <p class=small-caps-text style="color: var(--clr-gray);margin: 0.1em 0 0 0;">added on <span class=highligh>08 Jan, 2024</span></p>
@@ -72,5 +72,5 @@ I've always had a soft spot for this movie. <s>It goes into the topic of finding
 It's a good movie, and you should watch it. You'll either love it to the core, or consider it another overrated mediocre relic of the past; be your own judge.  
 <section>
 
-[Watch Dead Poets Society](https://www.google.com/search?client=firefox-b-d&q=where+to+watch+dead+poets+society)
+[Watch Dead Poets Society](https://www.google.com/search?client=firefox-b-d&q=where+to+watch+watch+dead+poets+society)
 </section>
